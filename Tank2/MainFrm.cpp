@@ -21,6 +21,8 @@ IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
 
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
+	ON_WM_TIMER()
+
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -49,7 +51,7 @@ CMainFrame::CMainFrame() noexcept
 		GetClientRect(rcCli);
 		RECT rcFrame = { 0, 0, m_iWidth + m_iWidth - rcCli.right,
 		m_iHeight + m_iHeight - rcCli.bottom };//边框大小
-		MoveWindow(&rcFrame, TRUE);
+		MoveWindow(&rcFrame, TRUE);//使得主窗口在左上角显示
 	}
 
 }
@@ -58,58 +60,33 @@ CMainFrame::~CMainFrame()
 {
 }
 
-int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
+int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)//创建窗口
 {
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	if (!m_wndToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
-		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
-	{
-		TRACE0("未能创建工具栏\n");
-		return -1;      // 未能创建
-	}
-
-	if (!m_wndStatusBar.Create(this))
-	{
-		TRACE0("未能创建状态栏\n");
-		return -1;      // 未能创建
-	}
-	m_wndStatusBar.SetIndicators(indicators, sizeof(indicators)/sizeof(UINT));
-
-	// TODO: 如果不需要可停靠工具栏，则删除这三行
-	m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
-	EnableDocking(CBRS_ALIGN_ANY);
-	DockControlBar(&m_wndToolBar);
-
+	SetTimer(ETimerIdGameLoop, 0, NULL);//设置定时器
+	m_game.SetHandle(GetSafeHwnd());//把当前窗口句柄传给CGame类
 
 	return 0;
 }
 
-BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
+void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 {
-	if( !CFrameWnd::PreCreateWindow(cs) )
-		return FALSE;
-	// TODO: 在此处通过修改
-	//  CREATESTRUCT cs 来修改窗口类或样式
+	switch (nIDEvent)
+	{
+	case ETimerIdGameLoop:
+		static DWORD dwLastUpdate = GetTickCount64();
+		if (GetTickCount64()-dwLastUpdate >= 20)
+		{
+			m_game.EnterFrame(GetTickCount64());
+			break;
+		}
+		
+	default://其他消息，让系统默认处理
+		break;
+	}
 
-	return TRUE;
+	
+	
 }
-
-// CMainFrame 诊断
-
-#ifdef _DEBUG
-void CMainFrame::AssertValid() const
-{
-	CFrameWnd::AssertValid();
-}
-
-void CMainFrame::Dump(CDumpContext& dc) const
-{
-	CFrameWnd::Dump(dc);
-}
-#endif //_DEBUG
-
-
-// CMainFrame 消息处理程序
-

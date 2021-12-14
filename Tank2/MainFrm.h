@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "CGame.h"
 
 class CMainFrame : public CFrameWnd
 {
@@ -19,15 +20,15 @@ public:
 
 // 重写
 public:
-	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+	//virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 
 // 实现
 public:
 	virtual ~CMainFrame();
-#ifdef _DEBUG
-	virtual void AssertValid() const;
-	virtual void Dump(CDumpContext& dc) const;
-#endif
+//#ifdef _DEBUG
+//	virtual void AssertValid() const;
+//	virtual void Dump(CDumpContext& dc) const;
+//#endif
 
 protected:  // 控件条嵌入成员
 	CToolBar          m_wndToolBar;
@@ -38,10 +39,13 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	DECLARE_MESSAGE_MAP()
 
-	int m_iWidth;//客户区域 宽度
-	int m_iHeight;//客户区域 高度
+	int m_iWidth;//窗口 宽度
+	int m_iHeight;//窗口 高度
 
-
+	enum ETimerId {ETimerIdGameLoop = 1};
+	CGame m_game;//游戏类的对象
+public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
 
 
