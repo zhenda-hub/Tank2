@@ -18,11 +18,12 @@
 // CMainFrame
 
 IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
-
+//消息映射
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
 	ON_WM_TIMER()
-
+	ON_WM_MOUSEMOVE()
+	ON_WM_LBUTTONUP()
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -89,4 +90,15 @@ void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 
 	
 	
+}
+
+void CMainFrame::OnMouseMove(UINT nFlags, CPoint point)
+{
+	m_game.OnMouseMove(nFlags, point);//转发消息给CGame类
+	CFrameWnd::OnMouseMove(nFlags, point);//转发消息给父类
+}
+void CMainFrame::OnLButtonUp(UINT nFlags, CPoint point)
+{
+	m_game.OnLButtonUp(nFlags, point);
+	CFrameWnd::OnLButtonUp(nFlags, point);
 }

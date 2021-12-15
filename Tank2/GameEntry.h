@@ -14,7 +14,7 @@ public:
 	CGameEntry() {}
 	virtual ~CGameEntry() {}
 public:
-	virtual void Draw(Gdiplus::Grahpics& gh) const = 0;
+	virtual void Draw(Gdiplus::Graphics& gh) const = 0;
 
 };
 
@@ -32,7 +32,7 @@ public:
 	/**********拷贝构造**********CGameEntryMoveable a(b);***********************/
 	CGameEntryMoveable(const CGameEntryMoveable& obj)
 	{
-		if (this != obj)
+		if (this != &obj)//this指针和地址比较
 		{
 			this->m_bActive = obj.m_bActive;
 			this->m_rect = obj.m_rect;
@@ -45,7 +45,7 @@ public:
 
 	CGameEntryMoveable &operator=(const CGameEntryMoveable& obj)
 	{
-		if (this != obj)
+		if (this != &obj)
 		{
 			this->m_bActive = obj.m_bActive;
 			this->m_rect = obj.m_rect;
@@ -100,7 +100,7 @@ public:
 	{
 		return m_bActive;
 	}
-	virtual void IsActive(bool bActive) const
+	virtual void IsActive(bool bActive)
 	{
 		m_bActive = bActive;
 	}
@@ -177,8 +177,8 @@ public:
 	{
 		PointF ptCenter = GetCenterPoint();
 		PointF ptHead = ptCenter;
-		float fRadius = std::sqrt(std::pow(m_rect.Width / 2, 2) + 
-									std::pow(m_rect.Height / 2, 2));//计算半径
+		float fRadius = static_cast<float>(std::sqrt(std::pow(m_rect.Width / 2, 2) + 
+									std::pow(m_rect.Height / 2, 2)));//计算半径
 		ptHead.X += fRadius * sin(GetDirectionArc());
 		ptHead.X -= fRadius * cos(GetDirectionArc());
 		return ptHead;

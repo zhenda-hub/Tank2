@@ -20,12 +20,12 @@ void CGame::SetHandle(HWND hWnd)
 
 void CGame::OnMouseMove(UINT nFlags, CPoint point)
 {
-
+	m_menuSelect.OnMouseMove(nFlags, point);
 }
 
 void CGame::OnLButtonUp(UINT nFlags, CPoint point)
 {
-
+	m_menuSelect.ONLButtonUp(nFlags, point);
 }
 
 void CGame::GameRunDraw()
@@ -50,8 +50,9 @@ void CGame::GameRunDraw()
 	DrawFps(gh);//»æÖÆÖ¡Êý
 	//»æÖÆÍ¼Æ¬
 	{
-		Gdiplus::Image* img = Image::FromFile(_T("menu_background.png"));
-		gh.DrawImage(img, rc.left, rc.top, rc.right, rc.bottom);
+		m_menu.Draw(gh);
+
+		m_menuSelect.Draw(gh);
 		
 	}
 

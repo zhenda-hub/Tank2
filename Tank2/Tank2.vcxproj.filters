@@ -45,6 +45,12 @@
     <ClInclude Include="GameEntry.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GameMenuBackground.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameMenuPanel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tank2.cpp">
@@ -63,6 +69,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CGame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenuBackground.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameMenuPanel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
