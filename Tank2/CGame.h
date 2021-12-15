@@ -3,6 +3,11 @@
 class CGame
 {
 	HWND m_hWnd;//´°¿Ú
+	void GameRunDraw();
+	void DrawFps(Graphics& gh);
+
+	int m_fps{0};
+
 public:
 	CGame();
 	~CGame();

@@ -42,6 +42,9 @@
     <ClInclude Include="CGame.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GameEntry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tank2.cpp">

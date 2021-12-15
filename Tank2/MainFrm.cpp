@@ -76,10 +76,10 @@ void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 	switch (nIDEvent)
 	{
 	case ETimerIdGameLoop:
-		static DWORD dwLastUpdate = GetTickCount64();
+		static DWORD dwLastUpdate = GetTickCount();
 		if (GetTickCount64()-dwLastUpdate >= 20)
 		{
-			m_game.EnterFrame(GetTickCount64());
+			m_game.EnterFrame(GetTickCount());
 			break;
 		}
 		

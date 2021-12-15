@@ -16,6 +16,10 @@
 
 class CTank2App : public CWinApp
 {
+	//2. Gdiplus库的 固定写法
+	ULONG_PTR m_tokenGdiplus;
+	Gdiplus::GdiplusStartupInput input;
+	Gdiplus::GdiplusStartupOutput output;
 public:
 	CTank2App() noexcept;
 

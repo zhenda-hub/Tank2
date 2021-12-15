@@ -58,6 +58,9 @@ CTank2App theApp;
 
 BOOL CTank2App::InitInstance()
 {
+	//3.显示窗口前，调用库的初始化函数
+	Status s = GdiplusStartup(&m_tokenGdiplus, &input, &output);
+
 	CMainFrame* pFrame = new CMainFrame;
 	if (!pFrame) {
 		return FALSE;
@@ -67,6 +70,7 @@ BOOL CTank2App::InitInstance()
 	pFrame->ShowWindow(SW_SHOW);
 	pFrame->UpdateWindow();
 
+	return TRUE;
 }
 
 int CTank2App::ExitInstance()
