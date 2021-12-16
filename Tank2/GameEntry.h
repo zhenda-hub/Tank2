@@ -100,7 +100,7 @@ public:
 	{
 		return m_bActive;
 	}
-	virtual void IsActive(bool bActive)
+	virtual void SetActive(bool bActive)
 	{
 		m_bActive = bActive;
 	}
@@ -128,25 +128,19 @@ public:
 	virtual void RotateRight()//右转
 	{
 		m_direction += m_directionTurn;
-		if (m_direction >= 360)
-		{
-			m_direction -= 360;
-		}
+
 	}
 	virtual void RotateLeft()//左转
 	{
 		m_direction -= m_directionTurn;
-		if (m_direction < 0)
-		{
-			m_direction = static_cast<float>(360 - m_direction);
-		}
+
 	}
-	virtual void Forword()//前进
+	virtual void Forward()//前进
 	{
 		m_rect.X += static_cast<Gdiplus::REAL>((m_fSpeed)*sin(GetDirectionArc()));
 		m_rect.Y -= static_cast<Gdiplus::REAL>((m_fSpeed)*cos(GetDirectionArc()));
 	}
-	virtual void Backword()//后退
+	virtual void Backward()//后退
 	{
 		m_rect.X -= static_cast<Gdiplus::REAL>((m_fSpeed)*sin(GetDirectionArc()));
 		m_rect.Y += static_cast<Gdiplus::REAL>((m_fSpeed)*cos(GetDirectionArc()));

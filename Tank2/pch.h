@@ -12,7 +12,51 @@
 
 #endif //PCH_H
 
+#include <cassert>
+#include <cmath>
+#include <algorithm>
+#include <deque>
+#include <exception>
+#include <fstream>
+#include <functional>
+#include <ios>
+#include <iostream>
+#include <istream>
+#include <iterator>
+#include <limits>
+#include <list>
+#include <locale>
+#include <map>
+#include <memory>
+#include <numeric>
+#include <ostream>
+#include <queue>
+#include <random>
+#include <regex>
+#include <set>
+#include <stack>
+#include <string>
+#include <strstream>
+#include <tuple>
+#include <vector>
+
+using namespace std;
+
 //1. 导包
 #include <gdiplus.h>
 #pragma comment(lib, "Gdiplus.lib")
 using namespace Gdiplus;
+
+
+#define PI 3.14159265357f
+
+typedef struct PathNode 
+{
+	int x;
+	int y;
+}PathNode;
+
+typedef std::vector<PathNode> VPath;
+
+//清理内存的宏, 非空才删除！
+#define SAFE_DEL_PTR(ptr) if ((ptr) != nullptr){delete ptr;ptr = nullptr;}

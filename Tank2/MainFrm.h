@@ -45,6 +45,7 @@ protected:
 	enum ETimerId {ETimerIdGameLoop = 1};
 	CGame m_game;//游戏类的对象
 public:
+	//消息处理方法的声明
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);

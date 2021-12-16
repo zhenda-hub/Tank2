@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "CGame.h"
+#include <algorithm>
+
 CGame::CGame()
 {
 
@@ -10,6 +12,7 @@ CGame::~CGame() {}
 bool CGame::EnterFrame(DWORD dwTime)
 {
 	GameRunDraw();
+	GameLogic();
 	return false;
 }
 
@@ -50,10 +53,14 @@ void CGame::GameRunDraw()
 	DrawFps(gh);//绘制帧数
 	//绘制图片
 	{
-		m_menu.Draw(gh);
+		/*m_menu.Draw(gh);
 
-		m_menuSelect.Draw(gh);
-		
+		m_menuSelect.Draw(gh);*/
+		m_player01.Draw(gh);
+		for (auto &blt : m_lstBullets)
+		{
+			blt.Draw(gh);
+		}
 	}
 
 	::BitBlt(hdc, 0, 0, rc.Width(), rc.Height(), m_dcMemory.GetSafeHdc(), 0, 0, SRCCOPY);
@@ -61,6 +68,54 @@ void CGame::GameRunDraw()
 	dc->DeleteDC();
 	return;
 
+}
+
+void CGame::GameLogic()
+{
+	#define KEYDOWN(vk) (GetAsyncKeyState(vk) & (0x8000))//使用windowsAPI 和 与运算 创建一个宏
+	{
+		if (KEYDOWN(VK_LEFT))
+		{
+			m_player01.RotateLeft();
+		}
+		if (KEYDOWN(VK_RIGHT))
+		{
+			m_player01.RotateRight();
+		}
+		if (KEYDOWN(VK_UP))
+		{
+			m_player01.Forward();
+		}
+		if (KEYDOWN(VK_DOWN))
+		{
+			m_player01.Backward();
+		}
+		if (KEYDOWN('M'))
+		{
+			CBullet blt;
+			if (m_player01.Fire(blt))
+			{
+				m_lstBullets.push_back(blt);
+			}
+		}
+
+		for (auto& blt : m_lstBullets)
+		{
+			blt.Move();
+		}
+		{
+			//移除超时的子弹，调用了标准库的函数
+			auto itRemove = std::remove_if(m_lstBullets.begin(), m_lstBullets.end(),
+				[](CBullet& blt)->bool {return blt.IsTimeout(); });
+
+			for (auto it = itRemove; it != m_lstBullets.end(); ++it)
+			{
+				it->SetActive(false);
+				it->GetOwner()->AddBullet(*it);
+			}
+			m_lstBullets.erase(itRemove, m_lstBullets.end());
+		}
+	}
 }
 
 void CGame::DrawFps(Graphics& gh)
