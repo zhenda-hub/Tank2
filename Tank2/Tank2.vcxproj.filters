@@ -78,6 +78,15 @@
     <ClInclude Include="Wall.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GameMenuPanel2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMenuPlayer01.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMenuPlayer02.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tank2.cpp">
@@ -123,6 +132,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenuPanel2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMenuPlayer01.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMenuPlayer02.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

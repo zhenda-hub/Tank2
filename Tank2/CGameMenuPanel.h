@@ -21,10 +21,10 @@ public:
 
 	virtual void Draw(Graphics& gh) const;
 
-	RectF m_rect{ 0, 0, 800, 600 };
+	Gdiplus::RectF m_rect{ 0, 0, 800, 600 };
 
 	void OnMouseMove(UINT nFlags, CPoint point);//Êó±êÐü¸¡
-	void ONLButtonUp(UINT nFlags, CPoint point);//×ó¼üÌ§Æð
+	void OnLButtonUp(UINT nFlags, CPoint point);//×ó¼üÌ§Æð
 	Gdiplus::Image* m_imgBackground;
 	struct MyStruct
 	{

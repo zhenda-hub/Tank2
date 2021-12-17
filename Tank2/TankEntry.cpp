@@ -27,7 +27,7 @@ CTankEntry::CTankEntry(float x, float y, PCTSTR szImgName)
 
     // 速度
     //SetSpeed(10);
-    SetSpeed(3);
+    SetSpeed(1);
     // 当前的角度
     SetDirection(0);
     // 每次按键转 30度

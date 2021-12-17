@@ -7,17 +7,10 @@
       <FileName>Tank2.cpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CGame" Collapsed="true">
-    <Position X="11.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgACACABCAAAAAEACAACADAADABAAACAAQAgAAAAAA=</HashCode>
-      <FileName>CGame.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="CGameMenuPanel" Collapsed="true">
     <Position X="7.75" Y="8.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>QAAAAAABAAAAAgAAAAAAAAAAABAAAAAAAEQAAAHACAA=</HashCode>
+      <HashCode>QAAAAAABAAAAAgAAAAAAAABAABAAAAAAAEQAAAGACAA=</HashCode>
       <FileName>CGameMenuPanel.h</FileName>
     </TypeIdentifier>
   </Class>

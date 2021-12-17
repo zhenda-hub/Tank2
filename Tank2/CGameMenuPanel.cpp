@@ -68,7 +68,7 @@ void CGameMenuPanel::OnMouseMove(UINT nFlags, CPoint point)//第2个参数，鼠标位置
 		}
 	}
 }
-void CGameMenuPanel::ONLButtonUp(UINT nFlags, CPoint point)
+void CGameMenuPanel::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	PointF pt(static_cast<float>(point.x), static_cast<float>(point.y));
 	{

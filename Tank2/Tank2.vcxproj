@@ -192,8 +192,11 @@
     <ClInclude Include="GameHit.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="GameMenuBackground.h" />
+    <ClInclude Include="GameMenuPanel2.h" />
     <ClInclude Include="GamePathFinder.h" />
     <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="KeyMenuPlayer01.h" />
+    <ClInclude Include="KeyMenuPlayer02.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
@@ -213,6 +216,9 @@
     <ClCompile Include="GameHit.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="GameMenuBackground.cpp" />
+    <ClCompile Include="GameMenuPanel2.cpp" />
+    <ClCompile Include="KeyMenuPlayer01.cpp" />
+    <ClCompile Include="KeyMenuPlayer02.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

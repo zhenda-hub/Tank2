@@ -128,12 +128,16 @@ public:
 	virtual void RotateRight()//右转
 	{
 		m_direction += m_directionTurn;
-
+		if (m_direction >= 360) {
+			m_direction -= 360;
+		}
 	}
 	virtual void RotateLeft()//左转
 	{
 		m_direction -= m_directionTurn;
-
+		if (m_direction < 0) {
+			m_direction = static_cast<float>(360 - m_directionTurn);
+		}
 	}
 	virtual void Forward()//前进
 	{
@@ -157,14 +161,14 @@ public:
 	{
 		RectF rc = m_rect;
 		rc.X += static_cast<Gdiplus::REAL>((m_fSpeed)*sin(GetDirectionArc()));
-		rc.X -= static_cast<Gdiplus::REAL>((m_fSpeed)*cos(GetDirectionArc()));
+		rc.Y -= static_cast<Gdiplus::REAL>((m_fSpeed)*cos(GetDirectionArc()));//Y写成了X，3小时排查。。。
 		return rc;
 	}
 	virtual RectF BackwardNextRect() const
 	{
 		RectF rc = m_rect;
 		rc.X -= static_cast<Gdiplus::REAL>((m_fSpeed)*sin(GetDirectionArc()));
-		rc.X += static_cast<Gdiplus::REAL>((m_fSpeed)*cos(GetDirectionArc()));
+		rc.Y += static_cast<Gdiplus::REAL>((m_fSpeed)*cos(GetDirectionArc()));
 		return rc;
 	}
 	virtual PointF GetHeadPos() const//获取头部位置，发射子弹
@@ -174,7 +178,7 @@ public:
 		float fRadius = static_cast<float>(std::sqrt(std::pow(m_rect.Width / 2, 2) + 
 									std::pow(m_rect.Height / 2, 2)));//计算半径
 		ptHead.X += fRadius * sin(GetDirectionArc());
-		ptHead.X -= fRadius * cos(GetDirectionArc());
+		ptHead.Y -= fRadius * cos(GetDirectionArc());
 		return ptHead;
 	}
 	virtual PointF GetCenterPoint()const
