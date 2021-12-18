@@ -24,6 +24,7 @@ class CGameEntryMoveable : CGameEntry
 	RectF m_rect{ 0, 0, 100, 100};//占用区域, RectF 二位坐标系的类 坦克固定100
 	float m_fSpeed{10};//移动速度
 	float m_direction{0};//当前角度
+	//float m_directionTurn{90};//旋转角度
 	float m_directionTurn{5};//旋转角度
 
 public:

@@ -39,8 +39,8 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	DECLARE_MESSAGE_MAP()
 
-	int m_iWidth;//窗口 宽度
-	int m_iHeight;//窗口 高度
+	int m_iWidth{800};//窗口 宽度
+	int m_iHeight{600};//窗口 高度
 
 	enum ETimerId {ETimerIdGameLoop = 1};
 	CGame m_game;//游戏类的对象

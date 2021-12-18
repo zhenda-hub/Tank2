@@ -49,7 +49,7 @@ private:
     float m_wallWidth{ 10 };
 
     // 中间空地的宽度
-    float m_spaceLen{ 120 };
+    float m_spaceLen{ 150 };
     //float m_spaceLen{ 80 };
 
     // 代表四面的墙 : 左上右下, 注意顺序

@@ -19,7 +19,9 @@ class CGame
 public:
 	CGame();
 	~CGame();
+	/****************************************接收**********************************************/
 	void SetHandle(HWND hWnd);//输出窗口的句柄
+	/*****************************************发送*********************************************/
 	bool EnterFrame(DWORD dwTime);//处理游戏的每一帧
 	void OnMouseMove(UINT nFlags, CPoint point);
 	void OnLButtonUp(UINT nFlags, CPoint point);
@@ -28,7 +30,7 @@ public:
 	{
 		EGameTypeMenu = 0,
 		EGameTypeOne2BotMenu,	//人机对战
-		EgameTypeOne2Bot,
+		EGameTypeOne2Bot,
 		EGameTypeOne2BotEnd,
 		EGameTypeOne2OneMenu,	//双人对战
 		EGameTypeOne2One,
@@ -39,7 +41,8 @@ public:
 	void SetStep(CGame::EGameType step);//设置所处阶段，按步骤初始化
 
 private:
-	/*属性*/
+	/*****************************************属性*********************************************/
+
 	int m_fps{0};
 	EGameType m_eStep{EGameTypeMenu};
 	CPlayer m_player01;

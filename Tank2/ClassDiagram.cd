@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CAboutDlg" Collapsed="true">
-    <Position X="28.5" Y="3" Width="1.5" />
+    <Position X="36.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tank2.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CGameMenuPanel" Collapsed="true">
-    <Position X="7.75" Y="8.5" Width="2.25" />
+    <Position X="10.5" Y="8.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>QAAAAAABAAAAAgAAAAAAAABAABAAAAAAAEQAAAGACAA=</HashCode>
       <FileName>CGameMenuPanel.h</FileName>
@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CGameMenuBackground" Collapsed="true">
-    <Position X="10.25" Y="8.5" Width="2.5" />
+    <Position X="7.75" Y="8.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAgAAAEAAAIAAAAAAAAAAAEQAAAEAAAA=</HashCode>
       <FileName>GameMenuBackground.h</FileName>
@@ -50,14 +50,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CTank2Doc" Collapsed="true">
-    <Position X="28.5" Y="4" Width="1.5" />
+    <Position X="36.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAgAAgISggAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Tank2Doc.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CTank2View" Collapsed="true">
-    <Position X="30.25" Y="4" Width="1.5" />
+    <Position X="38" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACABAgAAAgAEAAAAAAAgAAAAAAAQ=</HashCode>
       <FileName>Tank2View.h</FileName>
@@ -78,14 +78,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CGameTimer" Collapsed="true">
-    <Position X="21" Y="9.25" Width="1.5" />
+    <Position X="27" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAACAAACACQAMAAAAAAAgAAgAAAAAAAAAQgAAAQA=</HashCode>
       <FileName>GameTimer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CGameTimeval" Collapsed="true">
-    <Position X="21" Y="10" Width="1.5" />
+    <Position X="27" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAACACCAMAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameTimer.h</FileName>
@@ -106,21 +106,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="game_hit::CVector2D" Collapsed="true">
-    <Position X="32" Y="4" Width="1.5" />
+    <Position X="39.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAgAAAAAAAAAAIQAAAQAIAAAAQABgAAAAAAg=</HashCode>
       <FileName>GameHit.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_hit::CLine" Collapsed="true">
-    <Position X="30.25" Y="3" Width="1.5" />
+    <Position X="38" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameHit.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_hit::CMovePoint" Collapsed="true">
-    <Position X="32" Y="3" Width="1.5" />
+    <Position X="39.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>GameHit.h</FileName>
@@ -141,14 +141,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CGamePathFinder" Collapsed="true">
-    <Position X="13.5" Y="4.5" Width="2.25" />
+    <Position X="23" Y="9" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAECAAQAAAAAAAAAAIBAAAAAIAAAAYAgAAAAAAAAAAQ=</HashCode>
       <FileName>GamePathFinder.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CPathFinderBFS" Collapsed="true">
-    <Position X="13.5" Y="5.75" Width="2.75" />
+    <Position X="23" Y="10.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAABAQAAAAAAAAABAAAAIAAAQAAAAAAAAA=</HashCode>
       <FileName>GamePathFinder.h</FileName>
@@ -161,22 +161,50 @@
       <FileName>Wall.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="CGame" Collapsed="true">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQhACCCARGAAgEIEkCAQCALBCPAhIAADCASAvAAIAEA=</HashCode>
+      <FileName>CGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGameMenuPanel2" Collapsed="true">
+    <Position X="13" Y="8.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAgAAAAAAAADAABgABAAAAAAAAACAAAA=</HashCode>
+      <FileName>GameMenuPanel2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CKeyMenuPlayer01" Collapsed="true">
+    <Position X="16" Y="8.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gBAACAAAAAAAggIABAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeyMenuPlayer01.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CKeyMenuPlayer02" Collapsed="true">
+    <Position X="19" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gBAACAAAAAAAAgIACAAAAAAAAAAABBAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeyMenuPlayer02.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="game_hit::Circle" Collapsed="true">
-    <Position X="28.5" Y="5.25" Width="1.5" />
+    <Position X="36.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABhAAAAAAA=</HashCode>
       <FileName>GameHit.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="PathNode" Collapsed="true">
-    <Position X="14.75" Y="7.25" Width="1.5" />
+    <Position X="23" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>pch.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Typedef Name="VPath" Collapsed="true">
-    <Position X="14.75" Y="8.5" Width="2.5" />
+    <Position X="23" Y="12" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>pch.h</FileName>

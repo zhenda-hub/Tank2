@@ -78,7 +78,8 @@ void CGameMenuPanel::OnLButtonUp(UINT nFlags, CPoint point)
 		if (rect.Contains(pt))
 		{
 			//人机大战，随后处理
-			AfxMessageBox(_T("鼠标左键抬起1"));
+			//AfxMessageBox(_T("鼠标左键抬起1"));
+			m_pParent->SetStep(CGame::EGameTypeOne2BotMenu);
 			return;
 		}
 	}
@@ -89,7 +90,8 @@ void CGameMenuPanel::OnLButtonUp(UINT nFlags, CPoint point)
 		if (rect.Contains(pt))
 		{
 			//双人大战，随后处理
-			AfxMessageBox(_T("鼠标左键抬起2"));
+			//AfxMessageBox(_T("鼠标左键抬起2"));
+			m_pParent->SetStep(CGame::EGameTypeOne2OneMenu);
 			return;
 		}
 	}

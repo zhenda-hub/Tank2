@@ -39,8 +39,6 @@ static UINT indicators[] =
 CMainFrame::CMainFrame() noexcept
 {
 	// TODO: 在此添加成员初始化代码
-	m_iWidth = 800;
-	m_iHeight = 600;
 #define MY_STYLE (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU |\
 	WS_MINIMIZEBOX | FWS_ADDTOTITLE)
 	//窗口
@@ -49,9 +47,10 @@ CMainFrame::CMainFrame() noexcept
 	//客户区
 	{
 		CRect rcCli;
-		GetClientRect(rcCli);
+		GetClientRect(&rcCli);
 		RECT rcFrame = { 0, 0, m_iWidth + m_iWidth - rcCli.right,
 		m_iHeight + m_iHeight - rcCli.bottom };//边框大小
+
 		MoveWindow(&rcFrame, TRUE);//使得主窗口在左上角显示
 	}
 
@@ -72,17 +71,19 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)//创建窗口
 	return 0;
 }
 
-void CMainFrame::OnTimer(UINT_PTR nIDEvent)
+void CMainFrame::OnTimer(UINT_PTR nIDEvent)//计时器处理，使一张张图片处理起来
 {
 	switch (nIDEvent)
 	{
 	case ETimerIdGameLoop:
-		static DWORD dwLastUpdate = GetTickCount();
-		if (GetTickCount()-dwLastUpdate >= 20)
+		static DWORD dwLastUpdate = GetTickCount();//记录首次时间间隔
+		if (GetTickCount()-dwLastUpdate >= 20)//判断时间间隔
+		//if (GetTickCount()-dwLastUpdate >= 2)//判断时间间隔
 		{
 			m_game.EnterFrame(GetTickCount());
-			break;
+			dwLastUpdate = GetTickCount();//记录时间间隔
 		}
+			break;
 		
 	default://其他消息，让系统默认处理
 		break;
